@@ -1,0 +1,4 @@
+{
+    "include": [ "org.opencord.metrics.performance" ],
+    "exclude": [ "org.opencord.metrics.faults" ]
+}

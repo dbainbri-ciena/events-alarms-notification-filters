@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://opencord.org/filter.schema.json",
+  "type": "object",
+  "title": "Filter object",
+  "definitions": {
+    "hierarical-id": {
+      "type": "string",
+      "pattern": "^([_a-zA-Z][-_a-zA-Z0-9]*)(\\.[_a-zA-Z][-_a-zA-Z0-9]*){0,}$",
+      "format": "regex",
+      "examples": [
+        "org.opencord.analytics-engine",
+        "org.opencord.metrics.in-packets"
+      ]
+    }
+  },
+  "properties": {
+    "include": {
+      "$id": "#/properties/include",
+      "type": "array",
+      "title": "list of include filters",
+      "items": { "$ref": "#/definitions/hierarical-id" }
+    },
+    "exclude": {
+      "$id": "#/properties/exclude",
+      "type": "array",
+      "title": "list of exclude filters",
+      "items": { "$ref": "#/definitions/hierarical-id" }
+    }
+  }
+}
