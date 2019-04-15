@@ -3,94 +3,22 @@
   "$id": "http://opencord.org/event.schema.json",
   "type": "object",
   "title": "Event object",
-  "definitions": {
-    "uuid": {
-      "type": "string",
-      "pattern": "^([0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12})$",
-      "format": "regex",
-      "examples": [
-        "6a2f41a3-c54c-fce8-32d2-0324e1c32e22"
-      ]
-    },
-    "hierarical-id": {
-      "type": "string",
-      "pattern": "^([_a-zA-Z][-_a-zA-Z0-9]*)(\\.[_a-zA-Z][-_a-zA-Z0-9]*){0,}$",
-      "format": "regex",
-      "examples": [
-        "org.opencord.analytics-engine",
-        "org.opencord.metrics.in-packets"
-      ]
-    },
-    "timestamp": {
-      "type": "string",
-      "pattern": "^([0-9]{8}T[0-6]{6}([0-9]{2})?Z)$",
-      "format": "regex",
-      "examples": [
-        "20190101T150203Z",
-        "20190101T15020301Z"
-      ]
-    }
-  },
-  "required": [
-    "header"
-  ],
+  "required": [ "header" ],
+  "optional": [ "references" ],
   "properties": {
     "header": {
       "$id": "#/properties/header",
       "type": "object",
       "title": "Common header",
-      "required": [
-        "source",
-        "source-type",
-        "timestamp",
-        "type"
-      ],
-      "properties": {
-        "id": {
-          "$id": "#/properties/header/properties/id",
-          "$ref": "#/definitions/uuid",
-          "title": "universally unique ID for event",
-          "description": "represents a univerally unique ID for an event instance. This value is optional, but can be useful when correlating events to notifications.",
-          "readOnly": true
-        },
-        "source": {
-          "$id": "#/properties/header/properties/source",
-          "$ref": "#/definitions/hierarical-id",
-          "title": "The event source / component name",
-          "description": "Represents a unique ID for the source of the event, such as a UUID. This ID should be unique per invocation of a component instance, i.e. if a component restarts it will have a different source ID.",
-          "readOnly": true
-        },
-        "source-type": {
-          "$id": "#/properties/header/properties/source-type",
-          "$ref": "#/definitions/hierarical-id",
-          "title": "The event source / component name",
-          "description": "Represents the type or class of component. This value is not unique per invocation and shared amoung all instances of a given type or class, e.g., org.opencord.analytics-engine",
-          "readOnly": true
-        },
-        "timestamp": {
-          "$id": "#/properties/header/properties/timestamp",
-          "$ref": "#/definitions/timestamp",
-          "title": "event timestamp",
-          "description": "The time space in UTC assigned by the source of the event.",
-          "readOnly": true
-        },
-        "type": {
-          "$id": "#/properties/header/properties/type",
-          "$ref": "#/definitions/hierarical-id",
-          "title": "type of event",
-          "description": "the type of the event as defined by the standard naming conventions. e.g., org.opencord.metrics.in-packets",
-          "readOnly": true
-        },
-        "labels": {
-          "$id": "#/properties/header/properties/labels",
-          "type": "array",
-          "items": { "$ref": "#/definitions/hierarical-id" },
-          "title": "labels for event",
-          "description": "list of labels associated with event",
-          "readOnly": true
+      "allOf": [{ "$ref": "file://schemas/header.schema.json" }]
+    },
+    "references": {
+        "$id": "#/properties/references",
+        "type": "array",
+        "items": {
+          "$ref": "file://schemas/header.schema.json#/definitions/uuid"
         }
       }
     }
   }
 }
-

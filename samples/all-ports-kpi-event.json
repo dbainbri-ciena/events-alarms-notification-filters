@@ -1,0 +1,60 @@
+{ "events":
+  [
+    {
+      "header": {
+        "id": "6a2f41a3-c54c-fce8-32d2-0324e1c32e22",
+        "timestamp": "12345678T123456Z",
+        "type": "org.opencord.voltha.pon.metrics.performace",
+        "type-version": "2.1",
+        "source": "000000139521a269",
+        "source-type": "logical-device",
+        "serial-number": "dummy_sn2209199",
+        "port-no": 1,
+        "port-type": "ethernet"
+      },
+      "metrics": {
+        "tx_dropped": 0.0,
+        "rx_packets": 0.0,
+        "rx_bytes": 0.0,
+        "rx_mcast_packets": 0.0,
+        "tx_mcast_packets": 16.0,
+        "rx_bcast_packets": 0.0,
+        "oper_status": 4.0,
+        "admin_state": 3.0,
+        "rx_errors": 0.0,
+        "tx_bytes": 1436.0,
+        "rx_dropped": 0.0,
+        "tx_packets": 16.0,
+        "tx_bcast": 0.0
+      }
+    },
+    {
+      "header": {
+        "id": "6a2f41a3-c54c-fce8-32d2-0324e1c32e22",
+        "timestamp": "12345678T123456Z",
+        "type": "org.opencord.voltha.pon.metrics.performace",
+        "type-version": "2.1",
+        "source": "000000139521a269",
+        "source-type": "logical-device",
+        "serial-number": "dummy_sn2209199",
+        "port-no": 2,
+        "port-type": "pon"
+      },
+      "metrics": {
+        "tx_dropped": 0.0,
+        "rx_packets": 0.0,
+        "rx_bytes": 0.0,
+        "rx_mcast_packets": 0.0,
+        "tx_mcast_packets": 16.0,
+        "rx_bcast_packets": 0.0,
+        "oper_status": 4.0,
+        "admin_state": 3.0,
+        "rx_errors": 0.0,
+        "tx_bytes": 1436.0,
+        "rx_dropped": 0.0,
+        "tx_packets": 16.0,
+        "tx_bcast": 0.0
+      }
+    }
+  ]
+}

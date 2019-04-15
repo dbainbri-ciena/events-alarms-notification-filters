@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://opencord.org/batch.schema.json",
+  "type": "object",
+  "title": "Batch of events",
+  "required": [ "events" ],
+  "events": {
+    "$id": "#/properties/event",
+    "type": "array",
+    "items": {
+      "$ref": "file://schemas/event.schema.json"
+    }
+  }
+}

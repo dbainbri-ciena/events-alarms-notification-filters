@@ -1,0 +1,53 @@
+{
+  "events": [
+    {
+      "header": {
+        "id": "6a2f41a3-c54c-fce8-32d2-0324e1c32e22",
+        "timestamp": "12345678T123456Z",
+        "type": "three",
+        "type-version": "2.1",
+        "source": "one.asd",
+        "source-type": "two",
+        "labels": [ "this", "is", "_a", "list.of", "labels" ]
+      },
+      "alarm": {
+        "priority": 10,
+        "severity": "minor",
+        "count": 1
+      }
+    },
+    {
+      "header": {
+        "id": "6a2f41a3-c54c-fce8-32d2-0324e1c32e22",
+        "timestamp": "12345678T123456Z",
+        "type": "three",
+        "type-version": "2.1",
+        "source": "one.asd",
+        "source-type": "two",
+        "labels": [ "this", "is", "_a", "list.of", "labels" ]
+      },
+      "alarm": {
+        "priority": 10,
+        "severity": "minor",
+        "count": 1
+      }
+    },
+    {
+      "header": {
+        "id": "6a2f41a3-c54c-fce8-32d2-0324e1c32e22",
+        "timestamp": "12345678T123456Z",
+        "type": "three",
+        "type-version": "2.1",
+        "source": "one.asd",
+        "source-type": "two",
+        "labels": [ "this", "is", "_a", "list.of", "labels" ]
+      },
+      "alarm": {
+        "priority": 10,
+        "severity": "minor",
+        "count": 1
+      }
+    }
+  ]
+}
+
